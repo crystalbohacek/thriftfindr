@@ -1,0 +1,46 @@
+    <% include ../partials/header %>
+
+    <div class="container">
+            <header class="jumbotron">
+                <div class="container">
+        <h1>Welcome To ThriftFinder</h1>
+        <p class="description">View our handpicked thrift stores from all over the world</p>
+        <p>
+            <a class="btn btn-primary btn-large" href="/thriftstores/new">Add a new thrift store</a>
+        </p>
+        </div>
+
+    </header>
+    
+    <% include ../partials/search %>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% thriftstores.forEach(function(thriftstore){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <a href="/thriftstores/<%=thriftstore._id %>">
+                        <% if(thriftstore.image) { %> 
+                    <img src="<%= thriftstore.image %>">
+                        <% } else { %>
+                    <img src="http://i.imgur.com/kntSEEW.jpg">
+                    <% } %>
+                    </a>
+                    <div class="caption">
+                        <h4><%= thriftstore.name %> </h4>
+                    </div>
+                    <p>
+                        <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+<script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
+
+<% include ../partials/footer %>

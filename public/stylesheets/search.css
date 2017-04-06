@@ -1,0 +1,7 @@
+body {
+    margin: 20px;
+}
+
+.input-group-btn .dropdown-toggle:not(:last-of-type) {
+    border-radius: 0 !important;
+}

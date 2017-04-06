@@ -1,0 +1,37 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Create a new thriftstore</h1>
+        <div style="width: 30%; margin: 20px auto;">
+            <form method="POST" action="/thriftstores">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                <fieldset class="price-group">
+                    <input type="radio" id="star5" name="pricegroup" value="5" /><label class = "full" for="star5" title="Expensive"></label>
+                    <input type="radio" id="star4" name="pricegroup" value="4" /><label class = "full" for="star4" title="Pricey"></label>
+                    <input type="radio" id="star3" name="pricegroup" value="3" /><label class = "full" for="star3" title="Average"></label>
+                    <input type="radio" id="star2" name="pricegroup" value="2" /><label class = "full" for="star2" title="Cheap"></label>
+                    <input type="radio" id="star1" name="pricegroup" value="1" /><label class = "full" for="star1" title="Super Cheap"></label>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="description" placeholder="description">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="address" placeholder="address">
+                </div>
+                <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/thriftstores">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

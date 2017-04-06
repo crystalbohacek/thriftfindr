@@ -1,0 +1,63 @@
+    <% include ../partials/header %>
+
+    <div class="container">
+        
+    
+        <!-- include search -->
+    
+        <% include ../partials/search %>
+    
+    
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+            
+            
+            <% if (locals.thriftstores && locals.thriftstores.length > 0){ %>
+                <div class="col-md-12">
+                <p><strong><%= locals.thriftstores.length %> 
+                <% if (locals.thriftstores.length === 1) {%>
+                    result
+                <% } else { %>
+                    results
+                <% } %>
+                found for <em><%= term %></em>...</strong></p>
+            </div>
+            
+                <% thriftstores.forEach(function(thriftstore){ %>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <a href="/thriftstores/<%=thriftstore._id %>">
+                                <% if(thriftstore.image) { %> 
+                            <img src="<%= thriftstore.image %>">
+                                <% } else { %>
+                            <img src="http://i.imgur.com/kntSEEW.jpg">
+                            <% } %>
+                            </a>
+                            <div class="caption">
+                                <h4><%= thriftstore.name %> </h4>
+                            </div>
+                            <p>
+                                <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
+                            </p>
+                        </div>
+                    </div>
+                <% }); %>
+        <% } else if (locals.term) { %>            
+            <div class="col-md-12">
+                <strong>Nothing found for <em><%= term %></em>...</strong>
+            </div>
+        <% } else { %>
+            <div class="col-md-12">
+                <strong>You need to search something to find it...</strong>
+            </div>
+        <% } %>
+
+        </div>
+    </div>
+    
+
+    <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
+    <% include ../partials/footer %>

@@ -1,0 +1,120 @@
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.nav-facebook-img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.comment-edit {
+    padding-left: 0;
+    padding-right: 8;
+}
+
+.comment-edit-cancel {
+    padding-left: 0;
+    padding-right: 8;
+}
+
+.comment-text {
+    padding-top: 10px;
+}
+
+.delete-button {
+    padding: 0;
+    border: 0;
+}
+
+#delete {
+    display: inline;
+}
+
+
+@media(min-width: 750px) {
+   #navbar {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+}
+
+@media(max-width: 624px) {
+   .description {
+       display: none;
+   }
+}
+
+
+.search-wrapper {
+    padding-bottom: 25px;
+    
+}
+
+/****** Style Star price-group Widget *****/
+
+.price-group { 
+  border: none;
+  float: left;
+}
+
+.price-group > input { display: none; } 
+.price-group > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f155";
+}
+
+.price-group > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.price-group > input:checked ~ label, /* show gold star when clicked */
+.price-group:not(:checked) > label:hover, /* hover current star */
+.price-group:not(:checked) > label:hover ~ label { color: #8CC152;  } /* hover previous stars in list */
+
+.price-group > input:checked + label:hover, /* hover current star when changing price-group */
+.price-group > input:checked ~ label:hover,
+.price-group > label:hover ~ input:checked ~ label, /* lighten current selection */
+.price-group > input:checked ~ label:hover ~ label { color: #A0D468;  } 
+
+
+.price-group-output {
+    color: #177718;
+}
+
+.responsive-iframe {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+ 
+/* 16x9 Aspect Ratio */
+.responsive-iframe-16x9 {
+  padding-bottom: 56.25%;
+}
+ 
+/* 4x3 Aspect Ratio */
+.responsive-iframe-4x3 {
+  padding-bottom: 75%;
+}
+ 
+.responsive-iframe iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,60 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Edit <%= thriftstore.name %></h1>
+        <div style="width: 30%; margin: 20px auto;">
+            <form method="POST" action="/thriftstores/<%= thriftstore._id%>?_method=PUT">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="thriftstore[name]" value="<%= thriftstore.name %>">
+                </div>
+                <div class="form-group">
+                <fieldset class="price-group">
+                    <input type="radio" id="star5" name="thriftstore[pricegroup]" value="5"
+                        <% if (thriftstore.pricegroup === '5') { %>
+                            checked
+                        <% } %>
+                    /><label class = "full" for="star5" title="Expensive"></label>
+                    <input type="radio" id="star4" name="thriftstore[pricegroup]" value="4"
+                        <% if (thriftstore.pricegroup === '4') { %>
+                            checked
+                        <% } %>
+                    /><label class = "full" for="star4" title="Pricey"></label>
+                    <input type="radio" id="star3" name="thriftstore[pricegroup]" value="3"
+                        <% if (thriftstore.pricegroup === '3') { %>
+                            checked
+                        <% } %>
+                    /><label class = "full" for="star3" title="Average"></label>
+                    <input type="radio" id="star2" name="thriftstore[pricegroup]" value="2"
+                        <% if (thriftstore.pricegroup === '2') { %>
+                            checked
+                        <% } %>
+                    /><label class = "full" for="star2" title="Cheap"></label>
+                    <input type="radio" id="star1" name="thriftstore[pricegroup]" value="1"
+                        <% if (thriftstore.pricegroup === '1') { %>
+                            checked
+                        <% } %>
+                    /><label class = "full" for="star1" title="Super Cheap"></label>
+                </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" type="text" name="thriftstore[image]" value="<%= thriftstore.image %>">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="thriftstore[description]" value="<%= thriftstore.description %>">
+                </div>
+                
+                <div class="form-group">
+                    <input class="form-control" type="text" name="thriftstore[address]" value="<%= thriftstore.address %>">
+                </div>
+                
+                <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/thriftstores">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
