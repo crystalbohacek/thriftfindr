@@ -193,3 +193,14 @@
     color: #999;
     margin-bottom: 30px;
 }
+
+
+/* alert styling */
+
+.alert {
+  position: fixed;
+  left: 15%;
+  right: 15%;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
