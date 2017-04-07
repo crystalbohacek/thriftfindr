@@ -10,6 +10,10 @@
     padding: 9px;
 }
 
+.navbar{
+    margin-bottom: 0;
+}
+
 .nav-facebook-img {
     max-height: 50px;
     max-width: 50px;
@@ -58,6 +62,44 @@
     
 }
 
+.picture-header {
+    min-height: 65vh;
+    background: linear-gradient(
+                     rgba(20,20,20, .6), 
+                     rgba(20,20,20, .6)),
+                     url(http://i.imgur.com/c7TR2TH.jpg) no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+}
+
+.welcome-message {
+    margin-top: 20vh;
+    text-align: center;
+    color: white;
+}
+
+.welcome-message h1,
+.welcome-message p{
+    text-shadow: 0 0 10px black;
+}
+
+.welcome-message h1{
+    font-size: 4em;
+}
+
+.welcome-message p{
+    font-size: 1.6em;
+}
+
+
+.caption-link {
+    text-align: left;
+    margin-bottom: -4px;
+}
+
+
+
+
 /****** Style Star price-group Widget *****/
 
 .price-group { 
@@ -95,6 +137,15 @@
     color: #177718;
 }
 
+.price-display {
+    color: #177718;
+    margin-bottom: 5px;
+}
+
+.price-display:first-of-type {
+    margin-left: 10px;
+}
+
 .responsive-iframe {
   position: relative;
   height: 0;
@@ -117,4 +168,28 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+
+
+/* front page thriftstore display */
+
+.add-store {
+    font-size: 130%;
+    float: right;
+}
+
+ #onhovericon{
+    float: right;
+    visibility: hidden;
+    margin-top: -20px;
+}
+
+#addicon:hover ~ #onhovericon{
+    visibility: visible;
+}
+
+.thriftstore-display-header {
+    color: #999;
+    margin-bottom: 30px;
 }

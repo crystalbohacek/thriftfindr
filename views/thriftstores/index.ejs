@@ -1,20 +1,31 @@
     <% include ../partials/header %>
 
-    <div class="container">
-            <header class="jumbotron">
-                <div class="container">
-        <h1>Welcome To ThriftFindr</h1>
-        <p class="description">View our handpicked thrift stores from all over the world</p>
-        <p>
-            <a class="btn btn-primary btn-large" href="/thriftstores/new">Add a new thrift store</a>
+    <header class="jumbotron-fluid picture-header">
+        <div class="container-fluid">
+        <div class="welcome-message">
+            <h1>Welcome to ThriftFindr</h1>
+            <p class="description">View our handpicked thrift stores from all over the world</p>
+            <% include ../partials/search %>
+        </div>
+        <p class="text-center">
+            <a class="btn btn-primary btn-large" href="/thriftstores/new"><i class="fa fa-plus" aria-hidden="true"></i> add a new thrift store</a>
         </p>
         </div>
 
     </header>
-    
-    <% include ../partials/search %>
 
-    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <div class="container">
+    
+    <div class="row thriftstore-display-header">
+      <div class="col-sm-8"><h1>Newly Added Thriftstores</h1></div>
+        <div class="col-sm-4"><div id="addicon"><h2><a href="/thriftstores/new"> 
+<i class="fa fa-plus-circle add-store" aria-hidden="true" alt="add new thrifstore"></i></a></h2></div>
+        <div id="onhovericon">add a new thriftstore</div> 
+    </div>
+    </div>
+    
+    
+    <div class="row" style="display:flex; flex-wrap: wrap;">
         <% thriftstores.forEach(function(thriftstore){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
@@ -26,11 +37,11 @@
                     <% } %>
                     </a>
                     <div class="caption">
-                        <h4><%= thriftstore.name %> </h4>
-                    </div>
-                    <p>
-                        <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
-                    </p>
+                        <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
+                        </div>
+                        <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
+                            <i class="price-display fa fa-usd" aria-hidden="true"></i>
+                            <% } %>
                 </div>
             </div>
         <% }); %>
