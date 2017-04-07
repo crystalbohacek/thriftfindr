@@ -48,7 +48,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.use(new FacebookStrategy({
     clientID: config.facebook.clientID,
     clientSecret: config.facebook.clientSecret,
-    callbackURL: "https://demod-flappydev.c9users.io/auth/facebook/callback",
+    callbackURL: "https://thriftfindr.com/auth/facebook/callback",
     profileFields: ['id', 'name','picture.type(large)', 'emails', 'displayName'],
   },
   function(accessToken, refreshToken, profile, cb) {
