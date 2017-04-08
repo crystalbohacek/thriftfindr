@@ -1,3 +1,8 @@
+
+/* ================ */
+/* Index Page */
+/* ================ */
+
 .thumbnail {
     padding: 0;
 }
@@ -9,6 +14,36 @@
 .thumbnail .caption-full {
     padding: 9px;
 }
+
+/* ================ */
+/* index thriftstore display */
+/* ================ */
+
+
+.add-store {
+    font-size: 130%;
+    float: right;
+}
+
+ #onhovericon{
+    float: right;
+    visibility: hidden;
+    margin-top: -20px;
+}
+
+#addicon:hover ~ #onhovericon{
+    visibility: visible;
+}
+
+.thriftstore-display-header {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+/* ================ */
+/* navbar */
+/* ================ */
+
 
 .navbar{
     margin-bottom: 0;
@@ -172,28 +207,6 @@
 
 
 
-/* front page thriftstore display */
-
-.add-store {
-    font-size: 130%;
-    float: right;
-}
-
- #onhovericon{
-    float: right;
-    visibility: hidden;
-    margin-top: -20px;
-}
-
-#addicon:hover ~ #onhovericon{
-    visibility: visible;
-}
-
-.thriftstore-display-header {
-    color: #999;
-    margin-bottom: 30px;
-}
-
 
 /* alert styling */
 
@@ -203,4 +216,21 @@
   right: 15%;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+}
+
+/* ================ */
+/* Login and Register */
+/* ================ */
+
+
+.aligner {
+  margin-top: -50px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aligner-item {
+  width: 100%;
 }
