@@ -1,6 +1,6 @@
 
 /* ================ */
-/* Index Page */
+/* == Index Page == */
 /* ================ */
 
 .thumbnail {
@@ -15,9 +15,9 @@
     padding: 9px;
 }
 
-/* ================ */
-/* index thriftstore display */
-/* ================ */
+/* ========================== */
+/* Index Thriftstore Display */
+/* ========================== */
 
 
 .add-store {
@@ -41,7 +41,7 @@
 }
 
 /* ================ */
-/* navbar */
+/* ==== Navbar ==== */
 /* ================ */
 
 
@@ -108,7 +108,6 @@
 }
 
 .welcome-message {
-    margin-top: 20vh;
     text-align: center;
     color: white;
 }
