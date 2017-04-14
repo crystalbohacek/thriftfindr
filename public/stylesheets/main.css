@@ -19,6 +19,10 @@
 /* Index Thriftstore Display */
 /* ========================== */
 
+.thrift-gallery {
+  padding-top: 10px;
+  padding-bottom: 80px;
+}
 
 .add-store {
     font-size: 130%;
@@ -209,8 +213,8 @@
 
 /* alert styling */
 
-.alert {
-  position: fixed;
+.alert-account {
+  position: absolute;
   left: 15%;
   right: 15%;
   border-top-right-radius: 0;
@@ -233,3 +237,96 @@
 .aligner-item {
   width: 100%;
 }
+
+
+/* --------------------------------------------- */
+/* FOOTER */
+/* --------------------------------------------- */
+
+footer {
+  background-color: #333;
+  padding: 40px;
+  font-size: 100%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child {
+  margin-right: 0;
+}
+
+.social-links li:last-child {
+  margin-right: 40px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+  font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-instagram,
+.ion-social-snapchat {
+  transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+  color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+  color: #55acee;
+}
+
+.ion-social-instagram:hover {
+  color: #e95950;
+}
+
+.ion-social-snapchat:hover {
+  color: #fffc00;
+}
+
+footer p {
+  color: #888;
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media(max-width: 560px) {
+  .footer-nav li{
+    display: block !important;
+  }
+}
+
+
+
