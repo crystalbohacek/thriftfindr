@@ -5,4 +5,8 @@ config.facebook = {
     clientSecret: ""
 }
 
+config.express = {
+	secret: "",
+}
+
 module.exports = config;

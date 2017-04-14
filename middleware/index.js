@@ -57,7 +57,7 @@ middlewareObj.isLoggedIn = function (req, res, next){
 
 middlewareObj.saveReferal = function (req, res, next){
     req.session.returnTo = req.originalUrl || '/';
-    console.log('saveReferal', req.session.returnTo);
+    //console.log('saveReferal', req.session.returnTo);
     return next();
 };
 

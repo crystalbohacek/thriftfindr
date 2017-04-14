@@ -4,15 +4,47 @@
 /* ================ */
 
 .thumbnail {
-    padding: 0;
+  min-height: 280px;
+  padding: 0;
 }
 
-.thumbnail img {
-    width: 100%;
+.thumbnail>img{
+  width: 100%;
 }
 
 .thumbnail .caption-full {
     padding: 9px;
+}
+
+.thumbnail-img {
+    padding: 0;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+@media(max-width: 768px) {
+  .thumbnail {
+    min-height: 380px;
+  }
+  .thumbnail-img {
+      padding: 0;
+      min-height: 300px;
+      background-size: cover;
+  }
+}
+
+.thumbnail-img img {
+    width: 100%;
+}
+
+
+.store-info{
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  padding: 0 20px 15px;
 }
 
 .picture-header {
@@ -60,6 +92,20 @@
 }
 
 
+/* ================ */
+/* == Thrift Store Show Page == */
+/* ================ */
+
+.page-content{
+  padding-top: 2.5em;
+}
+
+@media(max-width: 768px) {
+  .page-content{
+    padding-top: 2em;
+  }
+}
+
 /* ============================ */
 /* Thriftstore Display on Index */
 /* ============================ */
@@ -105,6 +151,10 @@
     max-width: 50px;
 }
 
+/* =============================== */
+/* = Showpage Comment and Delete = */
+/* =============================== */
+
 .comment-edit {
     padding-left: 0;
     padding-right: 8;
@@ -130,7 +180,7 @@
 
 
 /* ============================ */
-/* Style Star price-group Widget */
+/* ==== Price-Group Widget ==== */
 /* ============================ */
 
 
@@ -153,13 +203,13 @@
  float: right; 
 }
 
-/***** CSS Magic to Highlight Stars on Hover *****/
+/***** CSS Magic to Highlight Dollar Signs on Hover *****/
 
-.price-group > input:checked ~ label, /* show gold star when clicked */
-.price-group:not(:checked) > label:hover, /* hover current star */
-.price-group:not(:checked) > label:hover ~ label { color: #8CC152;  } /* hover previous stars in list */
+.price-group > input:checked ~ label, /* show dark green dollar sign when clicked */
+.price-group:not(:checked) > label:hover, /* hover current dollar sign */
+.price-group:not(:checked) > label:hover ~ label { color: #8CC152;  } /* hover previous dollar sign in list */
 
-.price-group > input:checked + label:hover, /* hover current star when changing price-group */
+.price-group > input:checked + label:hover, /* hover current dollar sign when changing price-group */
 .price-group > input:checked ~ label:hover,
 .price-group > label:hover ~ input:checked ~ label, /* lighten current selection */
 .price-group > input:checked ~ label:hover ~ label { color: #A0D468;  } 
@@ -205,7 +255,7 @@
 
 
 /* ============= */
-/* alert styling */
+/* Alert Styling */
 /* ============= */
 
 

@@ -36,7 +36,7 @@ app.use(flash());
 
 //PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret: "Bailey is the cutest dog",
+    secret: config.express.secret,
     resave: false,
     saveUninitialized: false
 }));
