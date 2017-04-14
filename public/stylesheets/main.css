@@ -15,9 +15,54 @@
     padding: 9px;
 }
 
-/* ========================== */
-/* Index Thriftstore Display */
-/* ========================== */
+.picture-header {
+    min-height: 65vh;
+    background: linear-gradient(
+                     rgba(20,20,20, .6), 
+                     rgba(20,20,20, .6)),
+                     url(https://i.imgur.com/lyPOEiZ.jpg) no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+}
+
+.welcome-message {
+    text-align: center;
+    color: white;
+}
+
+.welcome-message h1,
+.welcome-message p{
+    text-shadow: 0 0 10px black;
+}
+
+.welcome-message h1{
+    font-size: 4em;
+}
+
+.welcome-message p{
+    font-size: 1.6em;
+}
+
+
+.caption-link {
+    text-align: left;
+    margin-bottom: -4px;
+}
+
+
+.search-wrapper {
+    padding-bottom: 25px;
+}
+
+
+.glyphicon-search {
+  color: #428bca;
+}
+
+
+/* ============================ */
+/* Thriftstore Display on Index */
+/* ============================ */
 
 .thrift-gallery {
   padding-top: 10px;
@@ -43,6 +88,8 @@
     color: #999;
     margin-bottom: 30px;
 }
+
+
 
 /* ================ */
 /* ==== Navbar ==== */
@@ -82,63 +129,10 @@
 }
 
 
-@media(min-width: 750px) {
-   #navbar {
-    padding-left: 60px;
-    padding-right: 60px;
-}
-}
+/* ============================ */
+/* Style Star price-group Widget */
+/* ============================ */
 
-@media(max-width: 624px) {
-   .description {
-       display: none;
-   }
-}
-
-
-.search-wrapper {
-    padding-bottom: 25px;
-    
-}
-
-.picture-header {
-    min-height: 65vh;
-    background: linear-gradient(
-                     rgba(20,20,20, .6), 
-                     rgba(20,20,20, .6)),
-                     url(https://i.imgur.com/lyPOEiZ.jpg) no-repeat;
-    background-size: cover;
-    margin-bottom: 30px;
-}
-
-.welcome-message {
-    text-align: center;
-    color: white;
-}
-
-.welcome-message h1,
-.welcome-message p{
-    text-shadow: 0 0 10px black;
-}
-
-.welcome-message h1{
-    font-size: 4em;
-}
-
-.welcome-message p{
-    font-size: 1.6em;
-}
-
-
-.caption-link {
-    text-align: left;
-    margin-bottom: -4px;
-}
-
-
-
-
-/****** Style Star price-group Widget *****/
 
 .price-group { 
   border: none;
@@ -210,8 +204,10 @@
 
 
 
-
+/* ============= */
 /* alert styling */
+/* ============= */
+
 
 .alert-account {
   position: absolute;
@@ -221,9 +217,9 @@
   border-top-left-radius: 0;
 }
 
-/* ================ */
+/* ================== */
 /* Login and Register */
-/* ================ */
+/* ================== */
 
 
 .aligner {
@@ -239,9 +235,9 @@
 }
 
 
-/* --------------------------------------------- */
-/* FOOTER */
-/* --------------------------------------------- */
+/* ============================ */
+/* ==========FOOTER============ */
+/* ============================ */
 
 footer {
   background-color: #333;
@@ -322,14 +318,27 @@ footer p {
   margin-top: 30px;
 }
 
+/*=========================*/
+/*-----Media Queries -------*/
+/*=========================*/
+
 @media(max-width: 560px) {
   .footer-nav li,
   .social-links li {
     display: block !important;
   }
+  .mobile-search {
+  width: 100%;
+  margin-left: 0;
+  }
 }
 
 @media(max-width: 750px) {
+
+  // .search-panel {
+  //   width: 100%;
+  // }
+
   .dropdown-toggle {
     display: none;
   }
@@ -342,7 +351,18 @@ footer p {
   }
 }
 
-.glyphicon-search {
-  color: #428bca;
+
+@media(min-width: 750px) {
+   #navbar {
+    padding-left: 60px;
+    padding-right: 60px;
 }
+}
+
+@media(max-width: 624px) {
+   .description {
+       display: none;
+   }
+}
+
 
