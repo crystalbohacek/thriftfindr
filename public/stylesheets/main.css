@@ -323,10 +323,26 @@ footer p {
 }
 
 @media(max-width: 560px) {
-  .footer-nav li{
+  .footer-nav li,
+  .social-links li {
     display: block !important;
   }
 }
 
+@media(max-width: 750px) {
+  .dropdown-toggle {
+    display: none;
+  }
+  #search_concept {
+    display: none;
+  }
 
+  .input-group .form-control:not(:first-child):not(:last-child) {
+    border-radius: 3px;
+  }
+}
+
+.glyphicon-search {
+  color: #428bca;
+}
 
