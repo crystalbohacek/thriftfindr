@@ -39,14 +39,6 @@
 }
 
 
-.store-info{
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  padding: 0 20px 15px;
-}
-
 .picture-header {
     min-height: 65vh;
     background: linear-gradient(
@@ -79,6 +71,9 @@
 .caption-link {
     text-align: left;
     margin-bottom: -4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 
