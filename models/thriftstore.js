@@ -8,6 +8,9 @@ var thriftstoreSchema = new mongoose.Schema({
     image: String,
     description: String,
     address: String,
+    city: String,
+    state: String,
+    phone: String,
     author: {
         id: {
             type: mongoose.Schema.Types.ObjectId,

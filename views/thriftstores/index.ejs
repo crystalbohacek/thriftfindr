@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script
@@ -79,7 +80,7 @@
     <div class="row thriftstore-display-header">
       <div class="col-xs-8"><h1>Newly Added Thriftstores</h1></div>
         <div class="col-xs-4"><div id="addicon"><h2><a href="/thriftstores/new"> 
-<i class="fa fa-plus-circle add-store" aria-hidden="true" alt="add new thrifstore"></i></a></h2></div>
+        <i class="fa fa-plus-circle add-store" aria-hidden="true" alt="add new thrifstore"></i></a></h2></div>
         <div id="onhovericon">add a new thriftstore</div> 
     </div>
     </div>
@@ -102,10 +103,13 @@
                         <div class="caption">
                             <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
                             </div>
+                            <% if (thriftstore.city && thriftstore.state ) { %>
+                                <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
+                            <% } %>
                             <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
                                 <i class="price-display fa fa-usd" aria-hidden="true"></i>
                                 <% } %>
-                    </div>
+                     </div>
 
                 </div>
             </div>

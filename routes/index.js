@@ -44,7 +44,7 @@ router.post("/register", function(req, res){
         if(err){
             return res.render("register", {"error": err.message});
         }
-        req.flash("success", "Welcome to ThriftFinder, " + user.username + "!");
+        req.flash("success", "Welcome to ThriftFindr, " + user.username + "!");
         passport.authenticate("local")(req, res, function(){
             res.redirect("/thriftstores");
         });

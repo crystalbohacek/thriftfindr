@@ -1,3 +1,17 @@
+/* ================ */
+/* ===  Global === */
+/* ================ */
+
+body {
+font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 300; 
+}
+
+
+
 
 /* ================ */
 /* == Index Page == */
@@ -42,8 +56,8 @@
 .picture-header {
     min-height: 65vh;
     background: linear-gradient(
-                     rgba(20,20,20, .6), 
-                     rgba(20,20,20, .6)),
+                     rgba(20,20,20, .65), 
+                     rgba(20,20,20, .65)),
                      url(https://i.imgur.com/lyPOEiZ.jpg) no-repeat;
     background-size: cover;
     margin-bottom: 30px;
@@ -56,7 +70,7 @@
 
 .welcome-message h1,
 .welcome-message p{
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 4px black;
 }
 
 .welcome-message h1{
@@ -130,6 +144,9 @@
     margin-bottom: 30px;
 }
 
+.city-display {
+  padding-left: 9px;
+}
 
 
 /* ================ */

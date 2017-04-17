@@ -26,6 +26,9 @@ router.post("/", middleware.isLoggedIn, function(req, res){
        image: req.body.image,
        description: req.body.description,
        address: req.body.address,
+       city: req.body.city,
+       state: req.body.state,
+       phone: req.body.phone,
        pricegroup: req.body.pricegroup,
        author: {
            id: req.user._id,

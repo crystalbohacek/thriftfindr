@@ -87,5 +87,5 @@ app.use("/auth", authenticationRoutes);
 
 
 app.listen(7000, function(){
-    console.log("The ThriftFinder server has started!");
+    console.log("The ThriftFindr server has started!");
 });
