@@ -84,7 +84,7 @@
                     </select>
                 </fieldset>
                 <div class="form-group">
-                  <input class="form-control" type="text" name="phone" placeholder="phone number">
+                  <input class="form-control" maxlength="15" maxlength="15" type="text" name="phone" onKeyup="addDashes(this)" placeholder="phone number">
                 </div>   
                 <div class="form-group">
                 <button class="btn btn-lg btn-primary btn-block">Submit!</button>
@@ -95,4 +95,15 @@
     </div>
 </div>
 
+<script>window.addDashes = function addDashes(f) {
+    var r = /(\D+)/g,
+        npa = '',
+        nxx = '',
+        last4 = '';
+    f.value = f.value.replace(r, '');
+    npa = f.value.substr(0, 3);
+    nxx = f.value.substr(3, 3);
+    last4 = f.value.substr(6, 4);
+    f.value = npa + '-' + nxx + '-' + last4;
+}</script>
 <% include ../partials/footer %>
