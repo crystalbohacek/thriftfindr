@@ -115,6 +115,10 @@ h1 {
   }
 }
 
+.thrift-show {
+  padding-top: 48px;
+}
+
 /* ============================ */
 /* Thriftstore Display on Index */
 /* ============================ */
@@ -393,6 +397,8 @@ footer p {
   width: 100%;
   margin-left: 0;
   }
+
+
 }
 
 @media(max-width: 750px) {
@@ -411,7 +417,13 @@ footer p {
   .input-group .form-control:not(:first-child):not(:last-child) {
     border-radius: 3px;
   }
+
+  
+   .thrift-show {
+    padding-top: 10px;
+   }
 }
+
 
 
 @media(min-width: 750px) {
@@ -423,8 +435,9 @@ footer p {
 
 @media(max-width: 624px) {
    .description {
-       display: none;
+     display: none;
    }
+
 }
 
 
