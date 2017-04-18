@@ -1,0 +1,2 @@
+var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
+ $('#picture-header').css({'background': 'linear-gradient( rgba(20,20,20, .55), rgba(20,20,20, .55)), url(images/' + images[Math.floor(Math.random() * images.length)] + ')', 'background-size': 'cover', 'min-height': '65vh', 'margin-bottom': '30px'});
