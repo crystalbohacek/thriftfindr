@@ -103,7 +103,7 @@
                                     
                                         <input class="form-control comment-edit-input" type="text" name="comment[text]" value="<%= comment.text %>">
                                              
-                                             <!--something like comment.author.picture -->
+                                             
                                     </div>
                                 </form>                                    
 
@@ -129,13 +129,10 @@
         </div>
     </div>
 </div>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous">
-    </script>
-    <script src="/scripts/show.js"></script>
 
 
 
 <% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="/scripts/show.js"></script>
+<% include ../partials/closingtags %>

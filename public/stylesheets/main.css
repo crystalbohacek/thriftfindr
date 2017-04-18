@@ -11,8 +11,6 @@ h1 {
 }
 
 
-
-
 /* ================ */
 /* == Index Page == */
 /* ================ */
@@ -56,9 +54,9 @@ h1 {
 .picture-header {
     min-height: 65vh;
     background: linear-gradient(
-                     rgba(20,20,20, .65), 
-                     rgba(20,20,20, .65)),
-                     url(https://i.imgur.com/lyPOEiZ.jpg) no-repeat;
+                     rgba(20,20,20, .55), 
+                     rgba(20,20,20, .55)),
+                     url(images/10.jpg) no-repeat;
     background-size: cover;
     margin-bottom: 30px;
 }
