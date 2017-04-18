@@ -10,11 +10,13 @@
                 <%=thriftstore.phone%> 
                 <% } %>">
                 <%if(thriftstore.phone) { %> 
-                <%=thriftstore.phone%> 
+                <%=thriftstore.phone%> <a href="#"><i class="fa fa-pencil-square-o edit-business-number" aria-hidden="true"></i></a>
+
                 <% } %>
                 </a></li>
                 <li class="list-group-item">Business Hours:</li>
-                <li class="list-group-item">Today 11:00 am - 11:00 pm<br> <span class="open">Open now</span>
+                <li class="list-group-item">Today 11:00 am - 11:00 pm <a href="#"><i class="fa fa-pencil-square-o edit-business-times" aria-hidden="true"></i></a>
+<br> <span class="open-now">Open now</span>
 </li>
             </div>
             <% if(thriftstore.address) { %>

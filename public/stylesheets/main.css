@@ -101,9 +101,9 @@ h1 {
 }
 
 
-/* ================ */
+/* ============================ */
 /* == Thrift Store Show Page == */
-/* ================ */
+/* ============================= */
 
 .page-content{
   padding-top: 2.5em;
@@ -118,6 +118,24 @@ h1 {
 .thrift-show {
   padding-top: 48px;
 }
+
+.open-now {
+  color: #27ae60;
+}
+
+.closed {
+  color: #c0392b;
+}
+
+.edit-business-number,
+.edit-business-times {
+  padding-left: 10px;
+}
+
+.edit-business-number {
+  color: white;
+}
+
 
 /* ============================ */
 /* Thriftstore Display on Index */
@@ -166,6 +184,8 @@ h1 {
     max-height: 50px;
     max-width: 50px;
 }
+
+
 
 /* =============================== */
 /* = Showpage Comment and Delete = */
@@ -401,7 +421,7 @@ footer p {
 
 }
 
-@media(max-width: 750px) {
+@media(max-width: 767px) {
 
   // .search-panel {
   //   width: 100%;
@@ -421,6 +441,10 @@ footer p {
   
    .thrift-show {
     padding-top: 10px;
+   }
+
+   .nav-facebook-img {
+    padding: 5px 0 5px 15px;
    }
 }
 
