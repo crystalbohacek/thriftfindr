@@ -7,8 +7,8 @@
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
       <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-      <link rel="stylesheet" href="/stylesheets/main.css">
       <link rel="stylesheet" href="/stylesheets/search.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -63,11 +63,11 @@
             <% include ../partials/search %>
         
         
-            <div class="row text-center" id="content" style="display:flex; flex-wrap: wrap;">
+            <div class="row" id="content" style="display:flex; flex-wrap: wrap;">
                 
                 
                 <% if (locals.thriftstores && locals.thriftstores.length > 0){ %>
-                    <div class="col-md-12">
+                <div class="col-md-12 text-center">
                     <p><strong><%= locals.thriftstores.length %> 
                     <% if (locals.thriftstores.length === 1) {%>
                         result
@@ -78,17 +78,17 @@
                 </div>
                 
                     <% thriftstores.forEach(function(thriftstore){ %>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="thumbnail">
-                    <a href="/thriftstores/<%=thriftstore._id %>">
-                        <div class="thumbnail-img"
+                      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="thumbnail">
+                          <a href="/thriftstores/<%=thriftstore._id %>">
+                           <div class="thumbnail-img"
                             <% if (thriftstore.image) { %> 
                                 style="background-image: url('<%= thriftstore.image %>');"
                                 <% } else { %>
                                 style="background-image: url('http://i.imgur.com/kntSEEW.jpg');"
                             <% } %>
                         ></div>
-                    </a>
+                          </a>
                         <div class="store-info">
                             <div class="caption">
                                 <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
