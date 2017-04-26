@@ -1,63 +1,122 @@
-    <% include ../partials/header %>
+    <!DOCTYPE html>
+<html>
+  <head>
+      <title>ThriftFindr</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="/stylesheets/search.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
 
+  <body>
+      
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a href="/" class="navbar-brand">ThriftFindr</a>
+              <!-- this button element makes the hamburger on collapse -->
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                      <% if(!currentUser){ %>
+                          <li><a href="/login">Login</a></li>
+                          <li><a href="/register">Sign Up</a></li>
+                      <% } else { %>
+                          <% if(currentUser.picture) { %>
+                              <li><img src="<%= currentUser.picture %>" class="nav-facebook-img"></li>
+                          <% } %>
+
+                          <li><a href="#">Signed In As <%= (currentUser.name || currentUser.username) %></a></li>
+                          <li><a href="/logout">Log Out</a></li>
+                      <% } %>
+                  </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
-        
-    
-        <!-- include search -->
-    
-        <% include ../partials/search %>
-    
-    
-        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-            
-            
-            <% if (locals.thriftstores && locals.thriftstores.length > 0){ %>
-                <div class="col-md-12">
-                <p><strong><%= locals.thriftstores.length %> 
-                <% if (locals.thriftstores.length === 1) {%>
-                    result
-                <% } else { %>
-                    results
-                <% } %>
-                found for <em><%= term %></em>...</strong></p>
-            </div>
-            
-                <% thriftstores.forEach(function(thriftstore){ %>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="thumbnail">
-                            <a href="/thriftstores/<%=thriftstore._id %>">
-                                <% if(thriftstore.image) { %> 
-                            <img src="<%= thriftstore.image %>">
-                                <% } else { %>
-                            <img src="http://i.imgur.com/kntSEEW.jpg">
-                            <% } %>
-                            </a>
-                            <div class="caption">
-                                <h4><%= thriftstore.name %> </h4>
-                            </div>
-                            <p>
-                                <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
-                            </p>
-                        </div>
-                    </div>
-                <% }); %>
-        <% } else if (locals.term) { %>            
-            <div class="col-md-12">
-                <strong>Nothing found for <em><%= term %></em>...</strong>
-            </div>
-        <% } else { %>
-            <div class="col-md-12">
-                <strong>You need to search something to find it...</strong>
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-account alert-danger" role="alert"> <%= error %> 
             </div>
         <% } %>
-
-        </div>
+        
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-account alert-success" role="alert"> <%= success %> 
+            </div>
+        <% } %>
     </div>
+
+    <div id="wrapper">
+        <div class="container">
+            
+            <!-- include search -->
+        
+            <% include ../partials/search %>
+        
+        
+            <div class="row text-center" id="content" style="display:flex; flex-wrap: wrap;">
+                
+                
+                <% if (locals.thriftstores && locals.thriftstores.length > 0){ %>
+                    <div class="col-md-12">
+                    <p><strong><%= locals.thriftstores.length %> 
+                    <% if (locals.thriftstores.length === 1) {%>
+                        result
+                    <% } else { %>
+                        results
+                    <% } %>
+                    found for <em><%= term %></em>...</strong></p>
+                </div>
+                
+                    <% thriftstores.forEach(function(thriftstore){ %>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="thumbnail">
+                                <a href="/thriftstores/<%=thriftstore._id %>">
+                                    <% if(thriftstore.image) { %> 
+                                <img src="<%= thriftstore.image %>">
+                                    <% } else { %>
+                                <img src="http://i.imgur.com/kntSEEW.jpg">
+                                <% } %>
+                                </a>
+                                <div class="caption">
+                                    <h4><%= thriftstore.name %> </h4>
+                                </div>
+                                <p>
+                                    <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
+                                </p>
+                            </div>
+                        </div>
+                    <% }); %>
+            <% } else if (locals.term) { %>            
+                <div class="col-md-12 result">
+                    <strong>Nothing found for <em><%= term %></em>...</strong>
+                </div>
+            <% } else { %>
+                <div class="col-md-12 result">
+                    <strong>You need to search something to find it...</strong>
+                </div>
+            <% } %>
+
+            </div>
+        </div>
+    <div id="footer"><% include ../partials/footer %></div>
     
+</div>
+
 
     <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
-    <% include ../partials/footer %>
+    <% include ../partials/placesapi %>
+    <% include ../partials/closingtags %>

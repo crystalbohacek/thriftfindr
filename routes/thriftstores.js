@@ -2,8 +2,10 @@ var express = require("express");
 var router = express.Router();
 var Thriftstore = require("../models/thriftstore");
 var middleware = require("../middleware");
-var moment  = require('moment');
+var moment = require('moment');
+var config = require('../config.js');
 
+console.log(config);
 
 //index route - show all thriftstores
 router.get("/", middleware.saveReferal, function(req, res){
@@ -65,7 +67,7 @@ router.get("/:id", middleware.saveReferal, function(req, res){
         } else {
             // console.log("foundThriftstore:");
             // console.log(foundThriftstore);
-            res.render("thriftstores/show", {thriftstore: foundThriftstore, currentUser: req.user, moment: moment});
+            res.render("thriftstores/show", {config: config, thriftstore: foundThriftstore, currentUser: req.user, moment: moment});
         }
     });
 });

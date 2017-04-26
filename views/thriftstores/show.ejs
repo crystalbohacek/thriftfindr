@@ -16,8 +16,8 @@
                 </a></li>
                 <li class="list-group-item">Business Hours:</li>
                 <li class="list-group-item">Today 11:00 am - 11:00 pm <a href="#"><i class="fa fa-pencil-square-o edit-business-times" aria-hidden="true"></i></a>
-<br> <span class="open-now">Open now</span>
-</li>
+                <br> <span class="open-now">Open now</span>
+                </li>
             </div>
             <% if(thriftstore.address) { %>
             <div class="thriftstore-location">
@@ -27,7 +27,7 @@
                       width="300"
                       height="450"
                       frameborder="0" style="border:0"
-                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDmw2SXXaXOrQLKVQECfip-eSkE-jtbju8&q=<%= thriftstore.address.replace(/ /g, '+') %> <%=thriftstore.city%> <%=thriftstore.state%>" allowfullscreen>
+                      src="https://www.google.com/maps/embed/v1/place?key=<%=config.api_keys.google_maps%>&q=<%= thriftstore.address.replace(/ /g, '+') %> <%=thriftstore.city%> <%=thriftstore.state%>" allowfullscreen>
                     </iframe>
                 </div>                
             </div>
@@ -120,8 +120,6 @@
                           </div>
                         </div>
 
-
-            
               </div>
             </div>
                     <% }); %>
@@ -129,7 +127,6 @@
         </div>
     </div>
 </div>
-
 
 
 <% include ../partials/footer %>

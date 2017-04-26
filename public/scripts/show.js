@@ -2,8 +2,8 @@ $(document).ready(function(){
 
 
 	// Hide all the buttons for editing comments. It might be better to just set display: none for these classes.
-		$('input.comment-edit-input').hide();
-		$('a.comment-edit-cancel').hide();
+	$('input.comment-edit-input').hide();
+	$('a.comment-edit-cancel').hide();
 
 
     $("a.comment-edit").on('click', function(event){
