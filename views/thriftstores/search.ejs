@@ -78,22 +78,30 @@
                 </div>
                 
                     <% thriftstores.forEach(function(thriftstore){ %>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="thumbnail">
-                                <a href="/thriftstores/<%=thriftstore._id %>">
-                                    <% if(thriftstore.image) { %> 
-                                <img src="<%= thriftstore.image %>">
-                                    <% } else { %>
-                                <img src="http://i.imgur.com/kntSEEW.jpg">
-                                <% } %>
-                                </a>
-                                <div class="caption">
-                                    <h4><%= thriftstore.name %> </h4>
+                    <a href="/thriftstores/<%=thriftstore._id %>">
+                        <div class="thumbnail-img"
+                            <% if (thriftstore.image) { %> 
+                                style="background-image: url('<%= thriftstore.image %>');"
+                                <% } else { %>
+                                style="background-image: url('http://i.imgur.com/kntSEEW.jpg');"
+                            <% } %>
+                        ></div>
+                    </a>
+                        <div class="store-info">
+                            <div class="caption">
+                                <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
                                 </div>
-                                <p>
-                                    <a href="/thriftstores/<%=thriftstore._id %>" class="btn btn-primary">More Info</a>
-                                </p>
-                            </div>
+                                <% if (thriftstore.city && thriftstore.state ) { %>
+                                    <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
+                                <% } %>
+                                <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
+                                    <i class="price-display fa fa-usd" aria-hidden="true"></i>
+                                    <% } %>
+                        </div>
+
+                </div>
                         </div>
                     <% }); %>
             <% } else if (locals.term) { %>            

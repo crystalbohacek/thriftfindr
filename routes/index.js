@@ -94,26 +94,53 @@ router.get("/logout", function(req, res){
 // router.get("/search/:type/:term", middleware.saveReferal, function(req, res){
 router.get("/search", middleware.saveReferal, function(req, res){
     //find the thriftstore with provided ID
+
+    // Thriftstore.find({ "name": new RegExp(req.query.term, 'i')}, function(err, data) {
+    //   if(err) {
+    //      console.log("err:");
+    //      console.log(err);
+    // }
+    // else{
+    //      //console.log('found: ', data.length);
+    //     res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
+    // }});
+
+
+    var searchQuery = new RegExp(req.query.term, 'i');
+
+    Thriftstore.find().or([
+        { 'name': { $regex: searchQuery }},
+        { 'description': { $regex: searchQuery }},
+        { 'address': { $regex: searchQuery }},
+        { 'city': { $regex: searchQuery }},
+        { 'state': { $regex: searchQuery }},
+        { 'phone': { $regex: searchQuery }}
+    ]).sort('title').exec(function(err, data) {
+        res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
+    });
+
+
+
     
-    switch (req.query.type) {
-        case 'name':
-            Thriftstore.find({ "name": new RegExp(req.query.term, 'i')}, function(err, data) {
-              if(err) {
-                 console.log("err:");
-                 console.log(err);
-            }
-            else{
-                 console.log('found: ', data.length);
-                res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
-            }});
-            break;
-        case 'location':
-            //implement search by location
-            break;
-        default:
-            res.render("thriftstores/search", {currentUser: req.user});
+    // switch (req.query.type) {
+    //     case 'name':
+    //         Thriftstore.find({ "name": new RegExp(req.query.term, 'i')}, function(err, data) {
+    //           if(err) {
+    //              console.log("err:");
+    //              console.log(err);
+    //         }
+    //         else{
+    //              //console.log('found: ', data.length);
+    //             res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
+    //         }});
+    //         break;
+    //     case 'location':
+    //         //implement search by location
+    //         break;
+    //     default:
+    //         res.render("thriftstores/search", {currentUser: req.user});
             
-    }
+    // }
     
 
       
