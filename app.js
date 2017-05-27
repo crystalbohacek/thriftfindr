@@ -3,24 +3,24 @@ var express           = require("express"),
     User              = require("./models/user"),
     flash             = require("connect-flash"),
     seedDB            = require("./seeds"),
+    LocalStrategy     = require("passport-local"),
+    methodOverride    = require("method-override"),
+    FacebookStrategy  = require('passport-facebook').Strategy,
     Comment           = require("./models/comment"),
     mongoose          = require("mongoose"),
     passport          = require("passport"),
     bodyParser        = require("body-parser"),
     Thriftstore       = require("./models/thriftstore"),
-    LocalStrategy     = require("passport-local"),
-    methodOverride    = require("method-override"),
-    // TwitterStrategy   = require('passport-twitter'),
-    FacebookStrategy  = require('passport-facebook').Strategy,
-    moment            = require('moment'),
-    config            = require('./config.js');
-
+    moment            = require("moment"),
+    config            = require("./config.js"),
+    fileUpload        = require('express-fileupload');
 
 
 //requiring routes    
 var commentRoutes = require("./routes/comments"),
     thriftRoutes  = require("./routes/thriftstores"),
     indexRoutes   = require("./routes/index"),
+    uploadRoutes  = require("./routes/upload"),
     authenticationRoutes = require("./routes/authentication");
 
 
@@ -28,6 +28,7 @@ var commentRoutes = require("./routes/comments"),
 mongoose.connect("mongodb://localhost/thrift_finder");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
+app.use(fileUpload());
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(flash());
@@ -84,6 +85,7 @@ app.use("/", indexRoutes);
 app.use("/thriftstores/:id/comments", commentRoutes);
 app.use("/thriftstores", thriftRoutes);
 app.use("/auth", authenticationRoutes);
+app.use("/upload", uploadRoutes)
 
 
 app.listen(7000, function(){

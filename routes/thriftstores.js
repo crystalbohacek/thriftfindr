@@ -5,7 +5,7 @@ var middleware = require("../middleware");
 var moment = require('moment');
 var config = require('../config.js');
 
-console.log(config);
+// console.log(config);
 
 //index route - show all thriftstores
 router.get("/", middleware.saveReferal, function(req, res){
