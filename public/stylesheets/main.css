@@ -308,6 +308,7 @@ h1 {
 
 
 .aligner {
+  width: 100%;
   margin-top: -50px;
   min-height: 100vh;
   display: flex;
