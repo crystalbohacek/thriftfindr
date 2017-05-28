@@ -21,7 +21,7 @@
             </div>
             <% if(thriftstore.address) { %>
             <div class="thriftstore-location">
-                <p><strong>Address:</strong><br> <%= thriftstore.address %> <br> <%= thriftstore.city%>, <%=thriftstore.state%></p>
+                <p><strong>Address:</strong><br> <%= thriftstore.address %><!--  <br> <%= thriftstore.city%>, <%=thriftstore.state%> --></p>
                 <div class="google-map responsive-iframe responsive-iframe-4x3">
                     <iframe
                       width="300"
@@ -49,7 +49,7 @@
                     <p>
                        <em>Submitted By: <%= (thriftstore.author.name ||  thriftstore.author.username) %></em>
                     </p>
-                    <% if(currentUser && thriftstore.author.id.equals(currentUser._id)){ %>
+                    <% if(currentUser && thriftstore.author.id && thriftstore.author.id.equals(currentUser._id)){ %>
                         <a class="btn btn-xs btn-warning" href="/thriftstores/<%= thriftstore._id %>/edit">Edit</a>
                         <form id="delete" action="/thriftstores/<%= thriftstore._id %>?_method=DELETE" method="POST">
                             <button class="btn btn-xs btn-danger">Delete</button>
@@ -58,18 +58,14 @@
                 </div>
             </div>
             <div class="well">
-                <!--<div class="text-right">-->
-                <!--    <a class="btn btn-success" href="/thriftstores/<%= thriftstore._id %>/comments/new">Add New Comment</a>-->
-                <!--</div>-->
+
                 <% if (currentUser){ %>
                 <form method="POST" action="/thriftstores/<%= thriftstore._id %>/comments">
                 <div class="form-group">
                     <input class="form-control comment-add" type="text" name="comment[text]" placeholder="Write a comment...">
                 </div>
                
-                <!--<div class="form-group">-->
-                <!--<button class="btn btn-lg btn-primary btn-block">Submit!</button>-->
-                <!--</div>-->
+
                 </form>
                 <% } else { %>
                     <div class="text-right">
@@ -96,7 +92,7 @@
                             <h4 class="media-heading"><%= comment.author.name || comment.author.username %><small class="text-muted pull-right"> <%= moment(comment.date).fromNow(); %> </small></h4>
                             
                             <p class="comment-text"><%= comment.text %></p>
-                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <% if(currentUser && comment.author.id && comment.author.id.equals(currentUser._id)){ %>
 
                                 <form method="POST" action="/thriftstores/<%= thriftstore._id %>/comments/<%= comment._id %>?_method=PUT">
                                     <div class="form-group">
@@ -131,5 +127,5 @@
 
 <% include ../partials/footer %>
 <% include ../partials/scripts %>
-      <script src="/scripts/show.js"></script>
+<script src="/scripts/show.js"></script>
 <% include ../partials/closingtags %>

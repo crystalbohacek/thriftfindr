@@ -6,6 +6,7 @@ var Thriftstore = require("../models/thriftstore");
 var middleware = require("../middleware");
 var assert = require('assert');  
 var util=require('util');
+var config = require('../config');
 
 
 //root route
@@ -16,7 +17,7 @@ router.get("/", middleware.saveReferal ,function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("thriftstores/index", {thriftstores: allThriftstores, currentUser: req.user});
+            res.render("thriftstores/index", {config: config, thriftstores: allThriftstores, currentUser: req.user});
         }
     });
 });
@@ -116,7 +117,7 @@ router.get("/search", middleware.saveReferal, function(req, res){
         { 'state': { $regex: searchQuery }},
         { 'phone': { $regex: searchQuery }}
     ]).sort('title').exec(function(err, data) {
-        res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
+        res.render("thriftstores/search", {config: config, term: req.query.term, thriftstores: data, currentUser: req.user});
     });
 
 

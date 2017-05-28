@@ -14,14 +14,14 @@ router.get("/", middleware.saveReferal, function(req, res){
         if(err){
             console.log(err);
         } else {
-            res.render("thriftstores/index", {thriftstores: allThriftstores, currentUser: req.user});
+            res.render("thriftstores/index", {config: config, thriftstores: allThriftstores, currentUser: req.user});
         }
     });
 });
 
 //create route - add thriftstore to database
 router.post("/", middleware.isLoggedIn, function(req, res){
-   //get data from form and add to campgrounds array
+   //get data from form and add to thriftstore array
    
    var newThriftstore = {
        name: req.body.name,
@@ -54,7 +54,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 
 //new route - show form to create new thriftstore
 router.get("/new", middleware.isLoggedIn, function(req, res){
-    res.render("thriftstores/new", {currentUser: req.user});
+    res.render("thriftstores/new", {config: config, currentUser: req.user});
 });
 
 //SHOW- shows more info about one thrift store
@@ -79,7 +79,7 @@ router.get("/:id/edit", middleware.checkThriftstoreOwnership, function(req, res)
         if(err){
             req.flash("error", "Thriftstore not found");
         } else {
-            res.render("thriftstores/edit", {thriftstore: foundThriftstore, currentUser: req.user});
+            res.render("thriftstores/edit", {config: config, thriftstore: foundThriftstore, currentUser: req.user});
         }
     });
 });

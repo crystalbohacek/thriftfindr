@@ -134,6 +134,10 @@ h1 {
   color: white;
 }
 
+.thriftstore-location {
+  margin: 30px 0 30px 0;
+}
+
 
 /* ============================ */
 /* Thriftstore Display on Index */
