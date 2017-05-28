@@ -3,15 +3,6 @@
                 <div class="col-xs-8 col-xs-offset-2 mobile-search">
                     <form action="/search" method="GET">
             		    <div class="input-group search-bar">
-                            <div class="input-group-btn search-panel">
-                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                	<span id="search_concept">Filter by</span> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href="#">Location</a></li>
-                                  <li><a href="#">Store Name</a></li> 
-                                </ul>
-                            </div>
                             <input type="hidden" name="type" value="name" id="search_type">         
                             <input type="text" class="form-control" name="term" id="search_term" placeholder="Search..." value="<% if (locals.term){ %><%=term %><% } %>">
                             <span class="input-group-btn">
