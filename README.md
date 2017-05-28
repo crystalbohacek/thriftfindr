@@ -1,6 +1,6 @@
 # ThriftFindr - Thriftstore Review Site
 
-<a href="https://thriftfindr.com"><img src="https://thriftfindr.com/public/images/thriftfindr.png" align="right"></a>
+<a href="https://thriftfindr.com"><img src="http://i.imgur.com/5hDJi0D.png" align="right"></a>
 
 ThriftFindr is a user-review site similar to Yelp, made with Node, Express and Mongo. You can view the site at <https://thriftfindr.com>
 
