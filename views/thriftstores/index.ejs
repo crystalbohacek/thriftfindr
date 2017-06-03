@@ -120,12 +120,15 @@
                         <div class="caption">
                             <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
                             </div>
-                            <% if (thriftstore.address ) { %>
+                            <% if (thriftstore.city && thriftstore.state ) { %>
+                                <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
+                            <% } else { %>
                                 <div class="city-display"><%= thriftstore.address %></div>
-                            <% } %>
+                                <% } %>
                             <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
                                 <i class="price-display fa fa-usd" aria-hidden="true"></i>
-                                <% } %>
+                            <% } %>
+                                
                      </div>
 
                 </div>
