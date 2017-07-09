@@ -2,31 +2,43 @@
 <div class="container aligner">
     <div class="row aligner-item">
         <h1 style="text-align: center;">Create a new thriftstore</h1>
-        <div style="width: 30%; margin: 20px auto;">
+        <div class="site-form">
             <form method="POST" action="/thriftstores">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="name" placeholder="name">
+                	<label for="name">Name:</label>
+                    <input class="form-control" type="text" name="name" placeholder="Name">
                 </div>
                 <div class="form-group">
-                <fieldset class="price-group">
-                    <input type="radio" id="star5" name="pricegroup" value="5" /><label class = "full" for="star5" title="Expensive"></label>
-                    <input type="radio" id="star4" name="pricegroup" value="4" /><label class = "full" for="star4" title="Pricey"></label>
-                    <input type="radio" id="star3" name="pricegroup" value="3" /><label class = "full" for="star3" title="Average"></label>
-                    <input type="radio" id="star2" name="pricegroup" value="2" /><label class = "full" for="star2" title="Cheap"></label>
-                    <input type="radio" id="star1" name="pricegroup" value="1" /><label class = "full" for="star1" title="Super Cheap"></label>
-                </fieldset>
+                <div class="row">
+                	<div class="col-sm-12">                
+                		<label for="pricegroup">Price Rating:</label>
+					</div>
+                	<div class="col-sm-12 price-group-wrapper">
+		                <fieldset class="price-group">
+		                    <input type="radio" id="star5" name="pricegroup" value="5" /><label class = "full" for="star5" title="Expensive"></label>
+		                    <input type="radio" id="star4" name="pricegroup" value="4" /><label class = "full" for="star4" title="Pricey"></label>
+		                    <input type="radio" id="star3" name="pricegroup" value="3" /><label class = "full" for="star3" title="Average"></label>
+		                    <input type="radio" id="star2" name="pricegroup" value="2" /><label class = "full" for="star2" title="Cheap"></label>
+		                    <input type="radio" id="star1" name="pricegroup" value="1" /><label class = "full" for="star1" title="Super Cheap"></label>
+		                </fieldset>
+                	</div>
+                </div>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="image" placeholder="image url">
+                	<label for="image">Thriftstore Image:</label>
+                    <input class="form-control" type="text" name="image" placeholder="Image url">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="description" placeholder="description">
+               		 <label for="description">Description:</label>
+                    <textarea class="form-control" type="text" name="description" placeholder="Description"></textarea>
                 </div>
                 <div class="form-group">
-                    <input id="search_term" class="form-control" type="text" name="address" placeholder="address">
+                	<label for="address">Address:</label>
+                    <input id="search_term" class="form-control" type="text" name="address" placeholder="Address">
                 </div>
                 <div class="form-group">
-                  <input class="form-control" maxlength="15" maxlength="15" type="text" name="phone" onKeyup="addDashes(this)" placeholder="phone number">
+                  <label for="address">Phone Number:</label>
+                  <input class="form-control" maxlength="15" maxlength="15" type="text" name="phone" onKeyup="addDashes(this)" placeholder="Phone number">
                 </div>   
                 <div class="form-group">
                 <button class="btn btn-lg btn-primary btn-block">Submit!</button>

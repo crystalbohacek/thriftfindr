@@ -190,6 +190,19 @@ h1 {
 
 
 
+
+
+/* =============================== */
+/* = Site Form = */
+/* =============================== */
+
+.site-form{
+  width: 100%;
+  max-width: 370px;
+  margin: 20px auto;
+}
+
+
 /* =============================== */
 /* = Showpage Comment and Delete = */
 /* =============================== */
@@ -221,6 +234,16 @@ h1 {
 /* ============================ */
 /* ==== Price-Group Widget ==== */
 /* ============================ */
+
+
+.price-group-wrapper { 
+  position: relative;
+  min-height: 2em;
+}
+
+.price-group-wrapper .price-group{ 
+  position: absolute;
+}
 
 
 .price-group { 
