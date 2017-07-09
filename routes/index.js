@@ -66,7 +66,10 @@ router.get("/login", function(req, res){
 //app.post(login, middleware, callback)
 
 
-router.post('/login', passport.authenticate('local'), function(req, res) {
+router.post('/login', passport.authenticate('local', {
+        failureRedirect: '/login',
+        failureFlash: true
+    }), function(req, res) {
     console.log('/login', req.session.returnTo);
     req.session.returnTo = req.session.returnTo || '/';
     res.redirect(req.session.returnTo);
