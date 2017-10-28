@@ -24,7 +24,6 @@
         $('body').fadeIn();      
       },1000)
     </script>
-      
 
   <nav class="navbar navbar-default">
 	<div class="container-fluid">
@@ -56,9 +55,6 @@
       </div>
   </nav>
       
-      
-      
-      
     <div class="container">
         <% if(error && error.length > 0){ %>
             <div class="alert alert-account alert-danger" role="alert"> <%= error %> 
@@ -75,7 +71,7 @@
         <div class="aligner">
             <div class="container-fluid aligner-item">
                 <div class="welcome-message">
-                    <h1>Welcome to ThriftFindr</h1>
+                    <h1>ThriftFindr</h1>
                     <p class="description">View our handpicked thrift stores from all over the world</p>
                     <% include ../partials/search %>
 <!-- 
@@ -102,12 +98,12 @@
     </div>
     </div>
     
-    
     <div class="row">
         <% thriftstores.forEach(function(thriftstore){ %>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="thumbnail">
                 <a href="/thriftstores/<%=thriftstore._id %>">
+                    <!-- If there is no thriftstore image, use default "no image" icon: -->
                     <div class="thumbnail-img"
                         <% if (thriftstore.image) { %> 
                             style="background-image: url('<%= thriftstore.image %>');"
@@ -120,6 +116,7 @@
                         <div class="caption">
                             <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
                             </div>
+                            <!-- If there is a city & state, display both. otherwise display address: -->
                             <% if (thriftstore.city && thriftstore.state ) { %>
                                 <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
                             <% } else { %>
@@ -136,8 +133,6 @@
         <% }); %>
     </div>
 </div>
-
-
 
 <% include ../partials/footer %>
 <% include ../partials/scripts %>

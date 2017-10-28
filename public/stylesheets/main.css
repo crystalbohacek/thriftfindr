@@ -50,9 +50,8 @@ h1 {
     width: 100%;
 }
 
-
 .picture-header {
-    min-height: 65vh;
+    min-height: 75vh;
     background: linear-gradient(
                      rgba(20,20,20, .55), 
                      rgba(20,20,20, .55)),
@@ -66,9 +65,8 @@ h1 {
     color: white;
 }
 
-.welcome-message h1,
-.welcome-message p{
-    text-shadow: 0 0 4px black;
+.welcome-message h1 {
+    font-weight: 400;
 }
 
 .welcome-message h1{
@@ -79,7 +77,6 @@ h1 {
     font-size: 1.6em;
 }
 
-
 .caption-link {
     text-align: left;
     margin-bottom: -4px;
@@ -87,7 +84,6 @@ h1 {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 
 .search-wrapper {
     padding-bottom: 25px;

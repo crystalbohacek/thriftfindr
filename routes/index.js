@@ -40,7 +40,7 @@ router.get("/register", middleware.saveReferal, function(req, res){
 
 //handle signup logic
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username, picture: "http://i.imgur.com/uisLofX.png"});
+    var newUser = new User({username: req.body.username, isAdmin: false, picture: "http://i.imgur.com/uisLofX.png"});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             return res.render("register", {"error": err.message});

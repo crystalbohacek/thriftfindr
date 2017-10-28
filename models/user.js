@@ -6,6 +6,7 @@ var UserSchema = new mongoose.Schema({
     password: String,
     email: String,
     name: String,
+    isAdmin: Boolean,
     facebookId: String,
     provider: String,
     picture: String
@@ -26,6 +27,7 @@ UserSchema.statics.findOrCreate = function findOrCreate(profile, cb){
             if(!result){
                 userObj.name = profile.displayName;
                 userObj.facebookId = profile.id;
+                userObj.isAdmin = false;
                 userObj.provider = "Facebook";
                 userObj.picture = profile.photos[0].value;
                 userObj.save(cb);
@@ -33,7 +35,6 @@ UserSchema.statics.findOrCreate = function findOrCreate(profile, cb){
                 console.log('user logged in');
                 // Log in the user
                 cb(err, result);
-
             }
             
         }
