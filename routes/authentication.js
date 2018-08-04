@@ -1,8 +1,8 @@
 // var TwitterStrategy   = require('passport-twitter');
 var FacebookStrategy  = require('passport-facebook');
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-var passport = require("passport");
+var passport = require('passport');
 var User = require("../models/user");
 
 //facebook login
