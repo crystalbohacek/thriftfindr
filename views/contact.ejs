@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ThriftFindr | About Us</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+
+  <nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">ThriftFindr</a>
+			<!-- this button element makes the hamburger on collapse -->
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		    <span class="sr-only">Toggle navigation</span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		    <span class="icon-bar"></span>
+		  </button>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+                    <% if(!currentUser){ %>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                    <% } else { %>
+                        <% if(currentUser.picture) { %>
+                            <li><img src="<%= currentUser.picture %>" class="nav-facebook-img"></li>
+                        <% } %>
+                        
+                        <li><a href="#">Signed In As <%= (currentUser.name || currentUser.username) %></a></li>
+                        <li><a href="/logout">Log Out</a></li>
+                    <% } %>
+                </ul>
+          </div>
+      </div>
+  </nav>
+      
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-account alert-danger" role="alert"> <%= error %> 
+            </div>
+        <% } %>
+        
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-account alert-success" role="alert"> <%= success %> 
+            </div>
+        <% } %>
+    </div>
+
+    <header class="jumbotron-fluid picture-header" id="picture-header">
+        <div class="aligner">
+            <div class="container-fluid aligner-item">
+                <div class="welcome-message">
+                    <h1>Contact</h1>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container thrift-gallery">
+    
+    <div class="row thriftstore-display-header">
+      <div class="col-xs-8"><h1>Newly Added Thriftstores</h1></div>
+        <div class="col-xs-4"><div id="addicon"><h2><a href="/thriftstores/new"> 
+        <i class="fa fa-plus-circle add-store" aria-hidden="true" alt="add new thrifstore"></i></a></h2></div>
+        <div id="onhovericon">add a new thriftstore</div> 
+    </div>
+    </div>
+    
+    <div class="row">
+        <% thriftstores.forEach(function(thriftstore){ %>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                <a href="/thriftstores/<%=thriftstore._id %>">
+                    <!-- If there is no thriftstore image, use default "no image" icon: -->
+                    <div class="thumbnail-img"
+                        <% if (thriftstore.image) { %> 
+                            style="background-image: url('<%= thriftstore.image %>');"
+                            <% } else { %>
+                            style="background-image: url('http://i.imgur.com/kntSEEW.jpg');"
+                        <% } %>
+                    ></div>
+                </a>
+                    <div class="store-info">
+                        <div class="caption">
+                            <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
+                            </div>
+                            <!-- If there is a city & state, display both. otherwise display address: -->
+                            <% if (thriftstore.city && thriftstore.state ) { %>
+                                <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
+                            <% } else { %>
+                                <div class="city-display"><%= thriftstore.address %></div>
+                                <% } %>
+                            <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
+                                <i class="price-display fa fa-usd" aria-hidden="true"></i>
+                            <% } %>
+                                
+                     </div>
+
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>
+<% include ../partials/scripts %>
+<script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
+<% include ../partials/placesapi %>
+<script src="scripts/bgchange.js" type="text/javascript"></script>
+<% include ../partials/closingtags %>
+      
