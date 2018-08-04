@@ -8,8 +8,6 @@ var request = require('request');
 var util = require('util');
 
 
-// console.log(config);
-
 //index route - show all thriftstores
 router.get("/", middleware.saveReferal, function(req, res){
 
@@ -51,7 +49,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         }
     }
     else{
-        var city = null, state = null;
+        var city = null, state = null, country = null;
     }
 
 

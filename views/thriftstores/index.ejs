@@ -72,7 +72,7 @@
             <div class="container-fluid aligner-item">
                 <div class="welcome-message">
                     <h1>ThriftFindr</h1>
-                    <p class="description">View our handpicked thrift stores from all over the world</p>
+                   <!-- <p class="description">View our handpicked thrift stores from all over the world</p>-->
                     <% include ../partials/search %>
 <!-- 
                     <form method="POST" action="/upload" encType="multipart/form-data">
@@ -99,7 +99,7 @@
     </div>
     
     <div class="row">
-        <% thriftstores.forEach(function(thriftstore){ %>
+        <% thriftstores.slice().reverse().forEach(function(thriftstore){ %>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="thumbnail">
                 <a href="/thriftstores/<%=thriftstore._id %>">

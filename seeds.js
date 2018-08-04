@@ -57,8 +57,5 @@ var data = [
     });
     });
     }
-    //add a few thriftstores
-
-    //add some comments
 
 module.exports = seedDB;
