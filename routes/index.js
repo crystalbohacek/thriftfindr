@@ -29,6 +29,11 @@ router.get("/", middleware.saveReferal ,function(req, res){
 // });
 
 
+//about us page
+router.get("/about", middleware.saveReferal, function(req, res){
+  res.render("about");
+});
+
 //show register form
 router.get("/register", middleware.saveReferal, function(req, res){
     if (req.user){

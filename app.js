@@ -82,6 +82,7 @@ app.use(function(req, res, next){
 
 //shortened routes
 app.use("/", indexRoutes);
+app.use("/about", indexRoutes);
 app.use("/thriftstores/:id/comments", commentRoutes);
 app.use("/thriftstores", thriftRoutes);
 app.use("/auth", authenticationRoutes);
