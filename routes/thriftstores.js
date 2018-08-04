@@ -53,7 +53,6 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     }
 
 
-
      var newThriftstore = {
          name: req.body.name,
          image: req.body.image,
@@ -61,6 +60,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
          address: req.body.address,
          city: city,
          state: state,
+         isFeatured: false,
          country: country,
          phone: req.body.phone,
          pricegroup: req.body.pricegroup,

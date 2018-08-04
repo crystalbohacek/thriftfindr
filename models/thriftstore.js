@@ -5,6 +5,7 @@ var mongoose = require("mongoose");
 var thriftstoreSchema = new mongoose.Schema({
     name: String,
     pricegroup: String,
+    isFeatured: Boolean,
     image: String,
     description: String,
     address: String,
