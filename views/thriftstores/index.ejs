@@ -98,37 +98,35 @@
     </div>
       
      <div class="row">
-      <% thriftstores.forEach(function(thriftstore){ %>
-         <% if(thriftstore.isFeatured === true) { %>
-          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <div class="thumbnail">
-              <a href="/thriftstores/<%=thriftstore._id %>">
-                  <!-- If there is no thriftstore image, use default "no image" icon: -->
-                  <div class="thumbnail-img"
-                      <% if (thriftstore.image) { %> 
-                          style="background-image: url('<%= thriftstore.image %>');"
-                          <% } else { %>
-                          style="background-image: url('http://i.imgur.com/kntSEEW.jpg');"
-                      <% } %>
-                  ></div>
-              </a>
-                  <div class="store-info">
-                      <div class="caption">
-                          <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
-                          </div>
-                          <!-- If there is a city & state, display both. otherwise display city & country: -->
-                          <% if (thriftstore.city && thriftstore.state ) { %>
-                              <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
-                          <% } else if (thriftstore.city && thriftstore.country) { %>
-                              <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.country %></div>
-                              <% } %>
-                          <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
-                              <i class="price-display fa fa-usd" aria-hidden="true"></i>
-                          <% } %>
-                   </div>
-              </div>
-          </div>
-            <% } %>
+      <% featuredThriftstores.forEach(function(thriftstore){ %>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="thumbnail">
+            <a href="/thriftstores/<%=thriftstore._id %>">
+                <!-- If there is no thriftstore image, use default "no image" icon: -->
+                <div class="thumbnail-img"
+                    <% if (thriftstore.image) { %> 
+                        style="background-image: url('<%= thriftstore.image %>');"
+                        <% } else { %>
+                        style="background-image: url('http://i.imgur.com/kntSEEW.jpg');"
+                    <% } %>
+                ></div>
+            </a>
+                <div class="store-info">
+                    <div class="caption">
+                        <a href="/thriftstores/<%=thriftstore._id %>"><h4 class="caption-link"><%= thriftstore.name %> </h4></a>
+                        </div>
+                        <!-- If there is a city & state, display both. otherwise display city & country: -->
+                        <% if (thriftstore.city && thriftstore.state ) { %>
+                            <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.state %></div>
+                        <% } else if (thriftstore.city && thriftstore.country) { %>
+                            <div class="city-display"><%= thriftstore.city %>, <%= thriftstore.country %></div>
+                            <% } %>
+                        <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
+                            <i class="price-display fa fa-usd" aria-hidden="true"></i>
+                        <% } %>
+                 </div>
+            </div>
+        </div>
       <% }); %>
     </div>
       
@@ -173,6 +171,11 @@
                 </div>
             </div>
         <% }); %>
+      
+        <% if (current < pages){ %>
+          <button>Show more</button>
+        <% } %>
+      
     </div>
 </div>
 

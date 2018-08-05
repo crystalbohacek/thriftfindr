@@ -21,7 +21,8 @@ var commentRoutes = require("./routes/comments"),
     thriftRoutes  = require("./routes/thriftstores"),
     indexRoutes   = require("./routes/index"),
     uploadRoutes  = require("./routes/upload"),
-    authenticationRoutes = require("./routes/authentication");
+    authenticationRoutes = require("./routes/authentication"),
+    apiRoutes = require("./routes/api");
 
 
 // seedDB(); //seed the database
@@ -86,6 +87,7 @@ app.use("/about", indexRoutes);
 app.use("/thriftstores/:id/comments", commentRoutes);
 app.use("/thriftstores", thriftRoutes);
 app.use("/auth", authenticationRoutes);
+app.use("/api", apiRoutes);
 app.use("/upload", uploadRoutes)
 
 

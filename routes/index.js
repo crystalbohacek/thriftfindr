@@ -11,6 +11,58 @@ var config = require('../config');
 
 //root route
 
+router.get("/", middleware.saveReferal, function(req, res){
+
+  var perPage = 400,
+      page = 1;
+  
+  Thriftstore
+    .find({ isFeatured: false })
+    .skip((perPage * page) - perPage)
+    .limit(perPage)
+    .exec(function(err, thriftstores) {
+      Thriftstore.count().exec(function(err, count) {
+        if(err){
+          console.log(err);
+          res.render("thriftstores/index", {
+            error: err,
+            config: config,
+            thriftstores: [],
+            currentUser: req.user
+          });          
+        } else {
+          Thriftstore
+            .find({ isFeatured: true })
+            .skip((perPage * page) - perPage)
+            .limit(perPage)
+            .exec(function(err, featuredThriftstores) {
+              Thriftstore.count().exec(function(err, count) {
+                if(err){
+                    console.log(err);
+                    res.render("thriftstores/index", {
+                      error: err,
+                      config: config,
+                      thriftstores: [],
+                      currentUser: req.user
+                    });          
+                } else {
+
+                  res.render("thriftstores/index", {
+                    config: config,
+                    thriftstores: thriftstores,
+                    featuredThriftstores: featuredThriftstores,
+                    currentUser: req.user,
+                    current: page,
+                    pages: Math.ceil(count / perPage)
+                  });          
+                }
+              });
+            });
+        }
+      });
+    });  
+});
+
 router.get("/", middleware.saveReferal ,function(req, res){
 
     Thriftstore.find({}, function(err, allThriftstores){

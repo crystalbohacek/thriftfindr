@@ -10,14 +10,7 @@ var util = require('util');
 
 //index route - show all thriftstores
 router.get("/", middleware.saveReferal, function(req, res){
-
-    Thriftstore.find({}, function(err, allThriftstores){
-        if(err){
-            console.log(err);
-        } else {
-            res.render("thriftstores/index", {config: config, thriftstores: allThriftstores, currentUser: req.user});
-        }
-    });
+  res.redirect('/');
 });
 
 //create route - add thriftstore to database
