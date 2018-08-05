@@ -106,7 +106,9 @@
                             <% for(i = 0; i < thriftstore.pricegroup; i++) {%>
                                 <i class="price-display fa fa-usd" aria-hidden="true"></i>
                             <% } %>
-                                
+                            <% for(i = thriftstore.pricegroup; i < 5; i++) {%>
+                                <i class="price-display fa fa-usd fa-usd-gray" aria-hidden="true"></i>
+                            <% } %>                                
                      </div>
 
                 </div>

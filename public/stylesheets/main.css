@@ -55,7 +55,7 @@ h1 {
     background: linear-gradient(
                      rgba(20,20,20, .55), 
                      rgba(20,20,20, .55)),
-                     url(images/10.jpg) no-repeat;
+                     url(images/1.jpg) no-repeat;
     background-size: cover;
     margin-bottom: 30px;
 }
@@ -280,6 +280,10 @@ h1 {
 .price-display {
     color: #177718;
     margin-bottom: 5px;
+}
+
+.price-display.fa-usd-gray {
+    color: silver;
 }
 
 .price-display:first-of-type {
