@@ -13,7 +13,7 @@ var config = require('../config');
 
 router.get("/", middleware.saveReferal, function(req, res){
 
-  var perPage = 4,
+  var perPage = 400,
       page = 1;
   
   Thriftstore
