@@ -45,7 +45,6 @@ router.post("/", middleware.isLoggedIn, function(req, res){
         var city = null, state = null, country = null;
     }
 
-
      var newThriftstore = {
          name: req.body.name,
          image: req.body.image,
@@ -93,8 +92,6 @@ router.get("/:id", middleware.saveReferal, function(req, res){
             console.log("err:");
             console.log(err);
         } else {
-            // console.log("foundThriftstore:");
-            // console.log(foundThriftstore);
             res.render("thriftstores/show", {config: config, thriftstore: foundThriftstore, currentUser: req.user, moment: moment});
         }
     });

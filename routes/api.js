@@ -7,21 +7,21 @@ var config = require('../config.js');
 var request = require('request');
 var util = require('util');
 
+// api endpoint to query the database 
 
-//new route - show form to create new thriftstore
 router.get("/query-db", function(req, res){
   var perPage = parseInt(req.query.perPage) || 10,
-      page = parseInt(req.query.page) || 1;
+      page = parseInt(req.query.page) || 1,
+      isFeatured = (req.query.getFeatured === "true") ? true : false
 
   res.setHeader('Content-Type', 'application/json');
   
   Thriftstore
-    .find({})
+    .find({ isFeatured: isFeatured })
+    .sort({ _id: -1 })
     .skip((perPage * page) - perPage)
     .limit(perPage)
     .exec(function(err, thriftstores) {
-//      console.log(err);
-//      console.log(thriftstores);
 
       Thriftstore.count().exec(function(err, count) {
         if(err){

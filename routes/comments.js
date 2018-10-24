@@ -4,8 +4,6 @@ var Thriftstore = require("../models/thriftstore");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 
-
-
 //Comments New
 
 router.get("/new", middleware.isLoggedIn, function(req, res){

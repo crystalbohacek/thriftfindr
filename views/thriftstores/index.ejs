@@ -143,8 +143,9 @@
     </div>
     </div>
     
-    <div class="row">
-        <% thriftstores.slice().reverse().forEach(function(thriftstore){ %>
+    <div class="row" id="thriftstore-display">
+
+        <% thriftstores.forEach(function(thriftstore){ %>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="thumbnail">
                 <a href="/thriftstores/<%=thriftstore._id %>">
@@ -178,19 +179,21 @@
                 </div>
             </div>
         <% }); %>
-      
-        <% if (current < pages){ %>
-          <p class="text-center">
-            <button class="btn btn-primary btn-large">show more</button>
-          </p>
-        <% } %>
-      
+
     </div>
+    <% if (current < pages){ %>
+        <div class="row">
+              <p class="text-center">
+                <button class="btn btn-default btn-large load-more-button" id="load-more">show more</button>
+              </p>
+        </div>
+    <% } %>
 </div>
 
 <% include ../partials/footer %>
 <% include ../partials/scripts %>
 <script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
+<script src="scripts/loadmore.js" type="text/javascript" charset="utf-8"></script>
 <% include ../partials/placesapi %>
 <script src="scripts/bgchange.js" type="text/javascript"></script>
 <% include ../partials/closingtags %>

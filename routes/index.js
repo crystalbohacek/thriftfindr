@@ -5,7 +5,7 @@ var User = require("../models/user");
 var Thriftstore = require("../models/thriftstore");
 var middleware = require("../middleware");
 var assert = require('assert');  
-var util=require('util');
+var util = require('util');
 var config = require('../config');
 
 
@@ -18,6 +18,7 @@ router.get("/", middleware.saveReferal, function(req, res){
   
   Thriftstore
     .find({ isFeatured: false })
+    .sort({ _id: -1 })
     .skip((perPage * page) - perPage)
     .limit(perPage)
     .exec(function(err, thriftstores) {
@@ -33,6 +34,7 @@ router.get("/", middleware.saveReferal, function(req, res){
         } else {
           Thriftstore
             .find({ isFeatured: true })
+            .sort({ _id: -1 })
             .skip((perPage * page) - perPage)
             .limit(perPage)
             .exec(function(err, featuredThriftstores) {

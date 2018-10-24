@@ -93,6 +93,29 @@ h1 {
   color: #428bca;
 }
 
+.load-more-button {
+  color: #007791;
+  border: 1px solid #007791;
+}
+
+.load-more-button:hover,
+.load-more-button:hover:focus,
+.load-more-button:active,
+.btn-default:active:focus {
+  outline: none;
+  color: #007791;
+  border: 1px solid #007791;
+  background-color: rgba(0, 119, 145, .2);
+}
+
+
+.btn-default.focus, 
+.btn-default:focus {
+  color: #007791;
+  border: 1px solid #007791;
+  background-color: rgba(0, 119, 145, .0);
+}
+
 
 /* ============================ */
 /* == Thrift Store Show Page == */
@@ -460,7 +483,6 @@ footer p {
   .input-group .form-control:not(:first-child):not(:last-child) {
     border-radius: 3px;
   }
-
   
    .thrift-show {
     padding-top: 10px;
