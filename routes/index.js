@@ -88,38 +88,38 @@ router.get("/about", middleware.saveReferal, function(req, res){
   res.render("about");
 });
 
-// //contact page
-// router.get("/contact", middleware.saveReferal, function(req, res){
-//   res.render('contact');
-// });
+//contact page
+router.get("/contact", middleware.saveReferal, function(req, res){
+  res.render('contact');
+});
 
-// //contact form logic
-// router.post("/contact", function(req, res){
-//   let mailOpts, smtpTrans;
-//   smtpTrans = nodemailer.createTransport({
-//     host: 'smtp.gmail.com',
-//     port: 465,
-//     secure: true,
-//     auth: {
-//       user: config.smtp_access.user,
-//       pass: config.smtp_access.password
-//     }
-//   });
-//   mailOpts = {
-//     from: req.body.name + ' &lt;' + req.body.email + '&gt;',
-//     to: config.smtp_access.user,
-//     subject: 'New message from contact form',
-//     text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-//   };
-//   smtpTrans.sendMail(mailOpts, function (error, response) {
-//     if (error) {
-//       res.render('contact-failure');
-//     }
-//     else {
-//       res.render('contact-success');
-//     }
-//   });
-// })
+//contact form logic
+router.post("/contact", function(req, res){
+  let mailOpts, smtpTrans;
+  smtpTrans = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+      user: config.smtp_access.user,
+      pass: config.smtp_access.password
+    }
+  });
+  mailOpts = {
+    from: req.body.name + ' &lt;' + req.body.email + '&gt;',
+    to: config.smtp_access.user,
+    subject: 'New message from contact form',
+    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  };
+  smtpTrans.sendMail(mailOpts, function (error, response) {
+    if (error) {
+      res.render('contact-failure');
+    }
+    else {
+      res.render('contact-success');
+    }
+  });
+})
 
 //show register form
 router.get("/register", middleware.saveReferal, function(req, res){
@@ -213,31 +213,7 @@ router.get("/search", middleware.saveReferal, function(req, res){
         { 'phone': { $regex: searchQuery }}
     ]).sort('title').exec(function(err, data) {
         res.render("thriftstores/search", {config: config, term: req.query.term, thriftstores: data, currentUser: req.user});
-    });
-
-
-
-    
-    // switch (req.query.type) {
-    //     case 'name':
-    //         Thriftstore.find({ "name": new RegExp(req.query.term, 'i')}, function(err, data) {
-    //           if(err) {
-    //              console.log("err:");
-    //              console.log(err);
-    //         }
-    //         else{
-    //              //console.log('found: ', data.length);
-    //             res.render("thriftstores/search", {term: req.query.term, thriftstores: data, currentUser: req.user});
-    //         }});
-    //         break;
-    //     case 'location':
-    //         //implement search by location
-    //         break;
-    //     default:
-    //         res.render("thriftstores/search", {currentUser: req.user});
-            
-    // }
-    
+    });  
 
       
     });
