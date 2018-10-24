@@ -88,10 +88,10 @@ router.get("/about", middleware.saveReferal, function(req, res){
   res.render("about");
 });
 
-//contact page
-router.get("/contact", middleware.saveReferal, function(req, res){
-  res.render('contact');
-});
+// //contact page
+// router.get("/contact", middleware.saveReferal, function(req, res){
+//   res.render('contact');
+// });
 
 // //contact form logic
 // router.post("/contact", function(req, res){
