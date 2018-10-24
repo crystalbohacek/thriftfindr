@@ -13,7 +13,8 @@ var express           = require("express"),
     Thriftstore       = require("./models/thriftstore"),
     moment            = require("moment"),
     config            = require("./config.js"),
-    fileUpload        = require('express-fileupload');
+    fileUpload        = require('express-fileupload'),
+    nodemailer        = require('nodemailer');
 
 
 //requiring routes    

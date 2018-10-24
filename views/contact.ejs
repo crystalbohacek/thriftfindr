@@ -1,14 +1,46 @@
 <% include ./partials/header %>
 <link rel="stylesheet" type="text/css" href="stylesheets/register.css" media="screen"/>
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-account alert-danger" role="alert"> <%= error %> 
+            </div>
+        <% } %>
+        
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-account alert-success" role="alert"> <%= success %> 
+            </div>
+        <% } %>
+    </div>
 
   <div class="container aligner">
   <div class="row aligner-item">
     <div class="col-lg-6 col-md-offset-3">
 
-      <h1>About Us</h1>
-      <p>Thriftfindr was founded in 2017 to help people find great thriftstores around the world.</p>
-      <p>We believe that reusing items can make the world a better place. </p>
-      <p><a href="/">Get in touch.</a></p>
+        <form action="/contact" method="POST">
+
+        <h1>Contact Us</h1>
+        <p>Have feedback or questions? Use the form below to contact us.</p>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Steve@email.com">
+        </div>
+
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="message" class="form-control" name="message" id="message" placeholder=""></textarea>
+        </div>
+
+        <button class="btn btn-default btn-large">submit</button>
+
+      </form>
 
     </div>
   </div>
