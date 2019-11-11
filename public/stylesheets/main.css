@@ -53,9 +53,9 @@ h1 {
 .picture-header {
     min-height: 75vh;
     background: linear-gradient(
-                     rgba(20,20,20, .55), 
-                     rgba(20,20,20, .55)),
-                     url(images/1.jpg) no-repeat;
+                     rgba(27, 18, 100, 0.55), 
+                     rgba(148, 76, 76, 0.85)),
+                     url(../images/1.jpg) no-repeat;
     background-size: cover;
     margin-bottom: 30px;
 }
