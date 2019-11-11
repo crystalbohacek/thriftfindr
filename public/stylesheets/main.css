@@ -51,13 +51,13 @@ h1 {
 }
 
 .picture-header {
-    min-height: 75vh;
-    background: linear-gradient(
-                     rgba(27, 18, 100, 0.55), 
-                     rgba(148, 76, 76, 0.85)),
-                     url(../images/1.jpg) no-repeat;
-    background-size: cover;
-    margin-bottom: 30px;
+  min-height: 75vh;
+  background: linear-gradient(to right,
+                   rgba(28, 111, 160, 0.699), 
+                   rgba(136, 21, 139, 0.692)),
+                   url(../images/1.jpg) no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
 }
 
 .welcome-message {
@@ -66,11 +66,16 @@ h1 {
 }
 
 .welcome-message h1 {
-    font-weight: 400;
+    font-family: Pacifico;
+    font-size: 4.5em;
+    margin: .5em;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px rgb(63, 63, 63);
 }
 
-.welcome-message h1{
-    font-size: 4em;
+.input-group .form-control, .index-search {
+  padding: 22px;
+  border-radius: 5px 0 0 5px !important;
 }
 
 .welcome-message p{
@@ -91,6 +96,7 @@ h1 {
 
 .glyphicon-search {
   color: #428bca;
+  padding: 9px;
 }
 
 .load-more-button {
