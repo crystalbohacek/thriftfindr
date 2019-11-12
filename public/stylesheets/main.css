@@ -3,7 +3,7 @@
 /* ================ */
 
 body {
-font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1 {
@@ -212,10 +212,6 @@ h1 {
     max-width: 50px;
 }
 
-.navbar-inner.index-navbar {
-  background:transparent;
-}
-
 .index-navbar {
   position: absolute;
   width: 100%;
@@ -229,9 +225,24 @@ h1 {
 .nav>li>a.index-nav-item:hover {
   background-color: transparent;
   background: transparent;
-  border: 0 0 2px 0 white;
-  border-bottom: solid white 2px;
 }
+
+@media only screen and (min-width: 768px) {
+  .nav>li>a.index-nav-item:focus,
+  .nav>li>a.index-nav-item:hover {
+    border: 0 0 2px 0 white;
+    border-bottom: solid white 2px;
+  }
+}
+
+.navbar-inner.index-navbar {
+  background:transparent;
+}
+
+.hamburger {
+  color: white;
+}
+
 
 /* =============================== */
 /* = Site Form = */
