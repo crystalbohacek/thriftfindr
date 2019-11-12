@@ -51,13 +51,13 @@ h1 {
 }
 
 .picture-header {
-    min-height: 75vh;
-    background: linear-gradient(
-                     rgba(20,20,20, .55), 
-                     rgba(20,20,20, .55)),
-                     url(images/1.jpg) no-repeat;
-    background-size: cover;
-    margin-bottom: 30px;
+  min-height: 75vh;
+  background: linear-gradient(to right,
+                   rgba(28, 111, 160, 0.699), 
+                   rgba(136, 21, 139, 0.692)),
+                   url(../images/1.jpg) no-repeat;
+  background-size: cover;
+  margin-bottom: 30px;
 }
 
 .welcome-message {
@@ -66,11 +66,16 @@ h1 {
 }
 
 .welcome-message h1 {
-    font-weight: 400;
+    font-family: Pacifico;
+    font-size: 4.5em;
+    margin: .7em;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px rgb(128, 1, 128);
 }
 
-.welcome-message h1{
-    font-size: 4em;
+.input-group .form-control, .index-search {
+  padding: 22px;
+  border-radius: 5px 0 0 5px !important;
 }
 
 .welcome-message p{
@@ -90,12 +95,13 @@ h1 {
 }
 
 .glyphicon-search {
-  color: #428bca;
+  color: rgb(128, 1, 128);
+  padding: 9px;
 }
 
 .load-more-button {
-  color: #007791;
-  border: 1px solid #007791;
+  color: rgb(128, 1, 128);
+  border: 1px solid rgb(128, 1, 128);
 }
 
 .load-more-button:hover,
@@ -103,17 +109,17 @@ h1 {
 .load-more-button:active,
 .btn-default:active:focus {
   outline: none;
-  color: #007791;
-  border: 1px solid #007791;
-  background-color: rgba(0, 119, 145, .2);
+  color: white;
+  border: 1px solid rgb(128, 1, 128);
+  background-color: rgb(128, 1, 128);
 }
 
 
 .btn-default.focus, 
 .btn-default:focus {
-  color: #007791;
-  border: 1px solid #007791;
-  background-color: rgba(0, 119, 145, .0);
+  color: rgb(128, 1, 128);
+  border: 1px solid rgb(128, 1, 128);
+  background-color: white;
 }
 
 
@@ -206,9 +212,26 @@ h1 {
     max-width: 50px;
 }
 
+.navbar-inner.index-navbar {
+  background:transparent;
+}
 
+.index-navbar {
+  position: absolute;
+  width: 100%;
+}
 
+.index-navbar a{
+  color: white;
+}
 
+.nav>li>a.index-nav-item:focus,
+.nav>li>a.index-nav-item:hover {
+  background-color: transparent;
+  background: transparent;
+  border: 0 0 2px 0 white;
+  border-bottom: solid white 2px;
+}
 
 /* =============================== */
 /* = Site Form = */

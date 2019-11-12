@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400|Pacifico" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script
@@ -16,19 +16,21 @@
     
     <body>
     <script>
-      $('body').css('display', 'none');  
+      $("body").css("display", "none");  
       $(document).ready(function() {
-        $('body').fadeIn();
+        $("body").fadeIn();
       });
       setTimeout(function(){
-        $('body').fadeIn();      
+        $("body").fadeIn();      
       },1000)
     </script>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar index-navbar">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a href="/" class="navbar-brand">ThriftFindr</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/" class="index-nav-item">Add a thriftstore</a></li>
+            </ul>
 			<!-- this button element makes the hamburger on collapse -->
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 		    <span class="sr-only">Toggle navigation</span>
@@ -40,15 +42,15 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
                     <% if(!currentUser){ %>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
+                        <li><a class="index-nav-item" href="/login">Login</a></li>
+                        <li><a class="index-nav-item" href="/register">Sign Up</a></li>
                     <% } else { %>
                         <% if(currentUser.picture) { %>
                             <li><img src="<%= currentUser.picture %>" class="nav-facebook-img"></li>
                         <% } %>
                         
                         <li><a href="#">Signed In As <%= (currentUser.name || currentUser.username) %></a></li>
-                        <li><a href="/logout">Log Out</a></li>
+                        <li><a class="index-nav-item" href="/logout">Log Out</a></li>
                     <% } %>
                 </ul>
           </div>
@@ -71,7 +73,7 @@
         <div class="aligner">
             <div class="container-fluid aligner-item">
                 <div class="welcome-message">
-                    <h1>ThriftFindr</h1>
+                    <h1>Thrift Findr</h1>
                    <!-- <p class="description">View our handpicked thrift stores from all over the world</p>-->
                     <% include ../partials/search %>
 <!-- 
@@ -80,9 +82,6 @@
                       <input type="submit">
                     </form> -->
                 </div>
-                <p class="text-center">
-                    <a class="btn btn-primary btn-large" href="/thriftstores/new"><i class="fa fa-plus" aria-hidden="true"></i> add a new thrift store</a>
-                </p>
             </div>
         </div>
 
