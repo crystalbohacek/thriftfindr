@@ -19,11 +19,11 @@
               <a href="/" class="navbar-brand">ThriftFindr</a>
               <!-- this button element makes the hamburger on collapse -->
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
@@ -34,7 +34,6 @@
                           <% if(currentUser.picture) { %>
                               <li><img src="<%= currentUser.picture %>" class="nav-facebook-img"></li>
                           <% } %>
-
                           <li><a href="#">Signed In As <%= (currentUser.name || currentUser.username) %></a></li>
                           <li><a href="/logout">Log Out</a></li>
                       <% } %>

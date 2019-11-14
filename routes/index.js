@@ -85,12 +85,12 @@ router.get("/", middleware.saveReferal ,function(req, res){
 
 //about us page
 router.get("/about", middleware.saveReferal, function(req, res){
-  res.render("about");
+  res.render("about", {currentUser: req.user});
 });
 
 //contact page
 router.get("/contact", middleware.saveReferal, function(req, res){
-  res.render('contact');
+  res.render("contact", {currentUser: req.user});
 });
 
 //contact form logic
