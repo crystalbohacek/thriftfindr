@@ -99,14 +99,14 @@ h1 {
   padding: 9px;
 }
 
-.load-more-button {
+.purple-btn {
   color: rgb(128, 1, 128);
   border: 1px solid rgb(128, 1, 128);
 }
 
-.load-more-button:hover,
-.load-more-button:hover:focus,
-.load-more-button:active,
+.purple-btn:hover,
+.purple-btn:hover:focus,
+.purple-btn:active,
 .btn-default:active:focus {
   outline: none;
   color: white;
@@ -202,9 +202,13 @@ h1 {
 /* ================ */
 
 
-.navbar{
+.navbar {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+.navbar-default {
+  border-top: 4px solid rgb(128, 1, 128);
 }
 
 .nav-facebook-img {
