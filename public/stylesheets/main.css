@@ -7,9 +7,9 @@ body {
 }
 
 h1 {
-  font-weight: 300; 
+    font-weight: 600;
+    font-size: 28px;
 }
-
 
 /* ================ */
 /* == Index Page == */
@@ -99,14 +99,16 @@ h1 {
   padding: 9px;
 }
 
-.load-more-button {
+/* change to a primary button (solid first) */
+
+.purple-btn {
   color: rgb(128, 1, 128);
   border: 1px solid rgb(128, 1, 128);
 }
 
-.load-more-button:hover,
-.load-more-button:hover:focus,
-.load-more-button:active,
+.purple-btn:hover,
+.purple-btn:hover:focus,
+.purple-btn:active,
 .btn-default:active:focus {
   outline: none;
   color: white;
@@ -188,8 +190,12 @@ h1 {
 }
 
 .thriftstore-display-header {
-    color: #999;
+    color: rgb(90, 90, 90);
     margin-bottom: 30px;
+}
+
+.thriftstore-row {
+  margin-bottom: 30px;
 }
 
 .city-display {
@@ -202,9 +208,13 @@ h1 {
 /* ================ */
 
 
-.navbar{
+.navbar {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+.navbar-default {
+  border-top: 4px solid rgb(128, 1, 128);
 }
 
 .nav-facebook-img {
