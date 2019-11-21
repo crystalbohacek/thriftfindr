@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400|Pacifico" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600|Pacifico" rel="stylesheet">
         <link rel="stylesheet" href="/stylesheets/main.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script
@@ -88,10 +88,10 @@
     <!-- featured thriftstore display -->
       
     <div class="row thriftstore-display-header">
-      <div class="col-xs-8"><h1>Featured Thriftstores</h1></div>
+      <div class="col-xs-8"><h1 class="display-label">Featured Thriftstores</h1></div>
     </div>
       
-     <div class="row">
+     <div class="row thriftstore-row">
       <% featuredThriftstores.forEach(function(thriftstore){ %>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="thumbnail">
@@ -130,14 +130,14 @@
     <!-- newly added thriftstore display -->
     
     <div class="row thriftstore-display-header">
-      <div class="col-xs-8"><h1>Newly Added Thriftstores</h1></div>
+      <div class="col-xs-8"><h1 class="display-label">Newly Added Thriftstores</h1></div>
         <div class="col-xs-4"><div id="addicon"><h2><a href="/thriftstores/new"> 
         <i class="fa fa-plus-circle add-store" aria-hidden="true" alt="add new thrifstore"></i></a></h2></div>
         <div id="onhovericon">add a new thriftstore</div> 
     </div>
     </div>
     
-    <div class="row" id="thriftstore-display">
+    <div class="row thriftstore-row" id="thriftstore-display">
 
         <% thriftstores.forEach(function(thriftstore){ %>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -189,6 +189,5 @@
 <script src="scripts/searchbar.js" type="text/javascript" charset="utf-8"></script>
 <script src="scripts/loadmore.js" type="text/javascript" charset="utf-8"></script>
 <% include ../partials/placesapi %>
-<script src="scripts/bgchange.js" type="text/javascript"></script>
 <% include ../partials/closingtags %>
       

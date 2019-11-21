@@ -7,9 +7,9 @@ body {
 }
 
 h1 {
-  font-weight: 300; 
+    font-weight: 600;
+    font-size: 28px;
 }
-
 
 /* ================ */
 /* == Index Page == */
@@ -98,6 +98,8 @@ h1 {
   color: rgb(128, 1, 128);
   padding: 9px;
 }
+
+/* change to a primary button (solid first) */
 
 .purple-btn {
   color: rgb(128, 1, 128);
@@ -188,8 +190,12 @@ h1 {
 }
 
 .thriftstore-display-header {
-    color: #999;
+    color: rgb(90, 90, 90);
     margin-bottom: 30px;
+}
+
+.thriftstore-row {
+  margin-bottom: 30px;
 }
 
 .city-display {
