@@ -27,7 +27,7 @@ var commentRoutes = require("./routes/comments"),
 
 
 // seedDB(); //seed the database
-mongoose.connect("mongodb://localhost/thrift_finder");
+mongoose.connect("mongodb://" + config.db.username + ":" + config.db.password + "@host:localhost/thrift_finder");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.use(fileUpload());
