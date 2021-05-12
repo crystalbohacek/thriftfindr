@@ -19,7 +19,7 @@
     "method-override": "^3.0.0",
     "moment": "^2.22.2",
     "mongoose": "^5.7.5",
-    "nodemailer": "^4.6.8",
+    "nodemailer": "^6.4.16",
     "nodemon": "^1.18.6",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
